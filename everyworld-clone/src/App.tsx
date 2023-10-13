@@ -31,11 +31,18 @@ const Root = () => {
   return (
     <>
       <RecoilRoot>
-        {/* <Header /> */}
         <main>
-          <Outlet />
+          <div className="bg-img">
+            <div className="img-container">
+              <img></img>
+            </div>
+          </div>
+          <div style={{ position: 'relative', zIndex: '30' }}>
+            {/* <Header /> */}
+            <Outlet />
+            {/* <Footer /> */}
+          </div>
         </main>
-        {/* <Footer /> */}
       </RecoilRoot>
     </>
   );
