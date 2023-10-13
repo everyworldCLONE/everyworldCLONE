@@ -5,6 +5,9 @@ import { RecoilRoot } from 'recoil';
 import MainLayout from './pages/home/MainLayout';
 import MusicLayout from './pages/music/MusicLayout';
 import Header from './layouts/Header';
+import AlbumDetail from './components/music/detail/AlbumDetail';
+import MyPageLayout from './pages/mypage/MypageLayout';
+
 
 function App() {
   const router = createBrowserRouter([
@@ -19,6 +22,14 @@ function App() {
         {
           path: 'music',
           element: <MusicLayout />,
+        },
+        {
+          path: 'music/:albumId',
+          element: <AlbumDetail />,
+        },
+        {
+          path: 'mypage',
+          element: <MyPageLayout />,
         },
       ],
     },
