@@ -1,7 +1,13 @@
 import React from 'react';
+import * as S from './MainLayout.style';
+import MainHeader from '../../components/Main/MainHeader';
 
 const MainLayout = () => {
-  return <div>메인 페이지</div>;
+  return (
+    <>
+      <MainHeader></MainHeader>
+    </>
+  );
 };
 
 export default MainLayout;
