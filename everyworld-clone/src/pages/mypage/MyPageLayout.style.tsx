@@ -31,8 +31,29 @@ export const ListHeader = styled.section`
   max-width: 1480px;
   margin-left: auto;
   margin-right: auto;
-  border-bottom-width: 1px;
+  border-bottom: 1px solid white;
   margin-top: 2.5rem;
+  div {
+    display: flex;
+  }
+  button {
+    letter-spacing: 0.11px;
+    line-height: 32px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+  }
 `;
 
 export const ListSection = styled.section`
@@ -45,4 +66,11 @@ export const ListSection = styled.section`
   margin-top: 1.5rem;
   z-index: 1;
   position: relative;
+`;
+
+export const NoNFT = styled.div`
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
