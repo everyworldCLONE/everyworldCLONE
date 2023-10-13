@@ -14,6 +14,20 @@ export const RightLogo = styled.aside`
   right: 2.5rem;
   bottom: 5rem;
   position: absolute;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  span {
+    letter-spacing: 8px;
+    line-height: 90px;
+    font-size: 80px;
+    color: rgb(196 9 255);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+  }
 `;
 
 export const ContentBox = styled.div`
@@ -73,4 +87,25 @@ export const NoNFT = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const ListFooter = styled.div`
+  padding-left: 100px;
+  padding-right: 100px;
+  color: rgb(160 160 160);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: rgb(25 25 25);
+
+  margin-top: 15rem;
+  div {
+    max-width: 1480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  p {
+    width: 70%;
+    font-size: 16px;
+    margin: 0;
+  }
 `;
