@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom';
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
   font-family: ${font.fontFamily};
   color: white;
-  line-height: 24px;
-  height: 140px;
+
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   background-color: gray;
 `;
 export const Logo = styled.img`
