@@ -4,6 +4,7 @@ import { RecoilRoot } from 'recoil';
 
 import MainLayout from './pages/home/MainLayout';
 import MusicLayout from './pages/music/MusicLayout';
+import Header from './layouts/Header';
 
 function App() {
   const router = createBrowserRouter([
@@ -38,7 +39,7 @@ const Root = () => {
             </div>
           </div>
           <div style={{ position: 'relative', zIndex: '30' }}>
-            {/* <Header /> */}
+            <Header />
             <Outlet />
             {/* <Footer /> */}
           </div>
