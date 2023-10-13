@@ -32,7 +32,11 @@ const Root = () => {
     <>
       <RecoilRoot>
         <main>
-          <div className="bg-img"></div>
+          <div className="bg-img">
+            <div className="img-container">
+              <img></img>
+            </div>
+          </div>
           <div style={{ position: 'relative', zIndex: '30' }}>
             {/* <Header /> */}
             <Outlet />
