@@ -6,7 +6,7 @@ import MainLayout from './pages/home/MainLayout';
 import MusicLayout from './pages/music/MusicLayout';
 import Header from './layouts/Header';
 import AlbumDetail from './components/music/detail/AlbumDetail';
-import MemberShipLayout from './pages/membership/MembershipLayout';
+import MemberShipLayout from './pages/membership/MemberShipLayout';
 import MyPageLayout from './pages/mypage/MyPageLayout';
 import Footer from './layouts/footer/Footer';
 
