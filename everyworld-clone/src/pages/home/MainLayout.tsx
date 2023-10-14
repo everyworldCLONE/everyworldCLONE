@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './MainLayout.style';
-import MainHeader from '../../components/main/MainHeaderr';
+import MainHeader from '../../components/main/MainHeader';
 import MainDescription from '../../components/main/MainDescription';
 import MainSecondDescription from '../../components/main/MainSecondDescription';
 import MainThirdDescription from '../../components/main/MainThirdDescription';
