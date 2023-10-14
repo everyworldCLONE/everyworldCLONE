@@ -6,8 +6,9 @@ import MainLayout from './pages/home/MainLayout';
 import MusicLayout from './pages/music/MusicLayout';
 import Header from './layouts/Header';
 import AlbumDetail from './components/music/detail/AlbumDetail';
-import MyPageLayout from './pages/mypage/MypageLayout';
 import MemberShipLayout from './pages/membership/MembershipLayout';
+import MyPageLayout from './pages/mypage/MyPageLayout';
+import Footer from './layouts/footer/Footer';
 
 function App() {
   const router = createBrowserRouter([
@@ -56,7 +57,7 @@ const Root = () => {
           <div style={{ position: 'relative', zIndex: '30' }}>
             <Header />
             <Outlet />
-            {/* <Footer /> */}
+            <Footer />
           </div>
         </main>
       </RecoilRoot>

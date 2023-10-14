@@ -10,6 +10,7 @@ main {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 .bg-img {
@@ -22,6 +23,6 @@ a {
   position: relative;
   width: 100%;
   height: 311px;
-  min-height: 1200px;
+  max-height: 1200px;
   top: -6rem;
 }

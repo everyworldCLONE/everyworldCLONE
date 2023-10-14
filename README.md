@@ -1,6 +1,7 @@
 # everyworldCLONE
 - 엔터테인먼트 아티스트 웹페이지 클론 프로젝트 + 아티스트 페이지를 위한 추가 아이디어 구현<br>
 - 클론 웹페이지 -> https://www.everyworld.club/
+- 프론트 배포 링크 -> https://everyworld-clone.vercel.app/
 
 # 기술스택
 <div display="flex">
