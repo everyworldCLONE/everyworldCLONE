@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './InfoBox.style';
-import profile from '../../../assets/profile.svg';
+import profile from '../../../assets/icons/profile.svg';
 
 const InfoBox = () => {
   return (
