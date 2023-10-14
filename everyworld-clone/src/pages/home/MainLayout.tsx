@@ -3,6 +3,7 @@ import * as S from './MainLayout.style';
 import MainHeader from '../../components/Main/MainHeader';
 import MainDescription from '../../components/Main/MainDescription';
 import MainSeondDescription from '../../components/Main/MainSecoudDescription';
+import MainThirdDescription from '../../components/Main/MainThirdDescription';
 const MainLayout = () => {
   return (
     <>
@@ -10,6 +11,7 @@ const MainLayout = () => {
         <MainHeader></MainHeader>
         <MainDescription></MainDescription>
         <MainSeondDescription></MainSeondDescription>
+        <MainThirdDescription></MainThirdDescription>
       </S.Container>
     </>
   );
