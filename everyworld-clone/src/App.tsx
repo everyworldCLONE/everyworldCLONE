@@ -8,6 +8,7 @@ import Header from './layouts/Header';
 import AlbumDetail from './components/music/detail/AlbumDetail';
 import MyPageLayout from './pages/mypage/MyPageLayout';
 import MemberShipLayout from './pages/membership/MemberShipLayout';
+import Footer from './layouts/footer/Footer';
 
 function App() {
   const router = createBrowserRouter([
@@ -56,7 +57,7 @@ const Root = () => {
           <div style={{ position: 'relative', zIndex: '30' }}>
             <Header />
             <Outlet />
-            {/* <Footer /> */}
+            <Footer />
           </div>
         </main>
       </RecoilRoot>
