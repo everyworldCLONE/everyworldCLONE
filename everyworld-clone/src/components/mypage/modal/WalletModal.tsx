@@ -3,7 +3,15 @@ import * as S from './Wallet.style';
 import XMark from '../../../assets/icons/x-mark.svg';
 import { Link } from 'react-router-dom';
 
-const WalletModal = () => {
+interface propsType {
+  setIsConnected: any;
+}
+
+const WalletModal = (props: propsType) => {
+  const connectHandler = () => {
+    props.setIsConnected(true);
+  };
+
   return (
     <S.Wrap>
       <S.DimBg></S.DimBg>
@@ -19,15 +27,21 @@ const WalletModal = () => {
           </S.ModalTitle>
           <S.InputBox>
             <input type="text" placeholder="내 지갑 이름" />
-            <button>내 지갑 연결하기</button>
+            <button onClick={connectHandler}>내 지갑 연결하기</button>
           </S.InputBox>
           <div>
             <span>지갑을 연결하면, 귀하는 EveryWorld의 </span>
-            <Link to="https://favor-w24.s3.ap-northeast-2.amazonaws.com/files/Everyworld_terms_of_service.pdf">
+            <Link
+              target="_blank"
+              to="https://favor-w24.s3.ap-northeast-2.amazonaws.com/files/Everyworld_terms_of_service.pdf"
+            >
               <span style={{ color: 'black' }}>이용약관</span>
             </Link>
             <span>과 </span>
-            <Link to="https://favor-w24.s3.ap-northeast-2.amazonaws.com/files/Everyworld_privacy_policy.pdf">
+            <Link
+              target="_blank"
+              to="https://favor-w24.s3.ap-northeast-2.amazonaws.com/files/Everyworld_privacy_policy.pdf"
+            >
               <span style={{ color: 'black' }}>개인정보처리방침</span>
             </Link>
             <span>에 동의하는 것으로 간주합니다.</span>

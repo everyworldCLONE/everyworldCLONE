@@ -3,11 +3,15 @@ import * as S from './MyPageLayout.style';
 import InfoBox from '../../components/mypage/infobox/InfoBox';
 import ListCard from '../../components/mypage/list/ListCard';
 import WalletModal from '../../components/mypage/modal/WalletModal';
+import { useRecoilState } from 'recoil';
+import { WalletConnect } from '../../atoms/WalletConnectAtom';
 
 const MyPageLayout = () => {
+  const [isConnected, setIsConnected] = useRecoilState<boolean>(WalletConnect);
+
   return (
     <S.Wrap>
-      <WalletModal />
+      {!isConnected && <WalletModal setIsConnected={setIsConnected} />}
       <S.Container>
         <S.RightLogo>
           <div>
