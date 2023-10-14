@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { theme } from '../../globalLayout/GlobalStyle';
 
 export const Container = styled.div`
-  width: 600px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: #c408ff;

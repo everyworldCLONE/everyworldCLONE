@@ -12,6 +12,12 @@ const MainSecoudDescription = () => {
           <p>ON</p>
           <p>SALE</p>
           <SaleTimer></SaleTimer>
+          <S.Text>
+            <p>
+              Get ready for the launch of EveryWorld membership! Holders will be assigned unique
+              roles and receive exclusive membership benefits. Join now.
+            </p>
+          </S.Text>
         </S.SaleInformationsBox>
       </S.Container>
     </>

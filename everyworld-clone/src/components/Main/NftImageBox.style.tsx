@@ -7,7 +7,7 @@ export const NftImageBox = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   height: 50%;
-  width: 50%;
+  width: 100%;
 `;
 
 export const NftImage = styled.img`
