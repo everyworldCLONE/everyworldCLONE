@@ -5,13 +5,15 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  width: 1480px;
+  margin: auto;
+  padding-left: 100px;
+  padding-right: 100px;
   font-family: ${font.fontFamily};
   color: white;
 
   padding-top: 3rem;
   padding-bottom: 3rem;
-  background-color: gray;
 `;
 export const Logo = styled.img`
   box-sizing: border-box;

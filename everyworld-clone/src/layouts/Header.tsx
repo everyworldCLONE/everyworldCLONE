@@ -8,7 +8,9 @@ const Header = () => {
   return (
     <>
       <S.Container>
-        <S.Logo src="https://www.everyworld.club/img/everyworld-logo.svg" />
+        <Link to="/">
+          <S.Logo src="https://www.everyworld.club/img/everyworld-logo.svg" />
+        </Link>
 
         <S.HeaderNav>
           <S.StyleLink to="/">
@@ -16,9 +18,9 @@ const Header = () => {
             <span>{languages}</span>
           </S.StyleLink>
           <S.StyleLink to="/">HOME</S.StyleLink>
-          <S.StyleLink to="/">MEMBERSHIP</S.StyleLink>
-          <S.StyleLink to="/">MUSIC</S.StyleLink>
-          <S.StyleLink to="/">MY PAGE</S.StyleLink>
+          <S.StyleLink to="/membership">MEMBERSHIP</S.StyleLink>
+          <S.StyleLink to="/music">MUSIC</S.StyleLink>
+          <S.StyleLink to="/mypage">MY PAGE</S.StyleLink>
         </S.HeaderNav>
       </S.Container>
     </>

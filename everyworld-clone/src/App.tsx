@@ -7,7 +7,7 @@ import MusicLayout from './pages/music/MusicLayout';
 import Header from './layouts/Header';
 import AlbumDetail from './components/music/detail/AlbumDetail';
 import MyPageLayout from './pages/mypage/MypageLayout';
-
+import MemberShipLayout from './pages/membership/MembershipLayout';
 
 function App() {
   const router = createBrowserRouter([
@@ -18,6 +18,10 @@ function App() {
         {
           index: true,
           element: <MainLayout />,
+        },
+        {
+          path: 'membership',
+          element: <MemberShipLayout />,
         },
         {
           path: 'music',
