@@ -2,10 +2,12 @@ import React from 'react';
 import * as S from './MyPageLayout.style';
 import InfoBox from '../../components/mypage/infobox/InfoBox';
 import ListCard from '../../components/mypage/list/ListCard';
+import WalletModal from '../../components/mypage/modal/WalletModal';
 
 const MyPageLayout = () => {
   return (
     <S.Wrap>
+      <WalletModal />
       <S.Container>
         <S.RightLogo>
           <div>
