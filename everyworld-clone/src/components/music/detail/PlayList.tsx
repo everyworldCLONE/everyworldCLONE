@@ -19,7 +19,9 @@ const PlayList = (props: propsType) => {
   const sound = useRef<Howl | null>(null);
 
   const musicHandler = () => {
-    if (!sound.current) {
+    if (sound.current) {
+      sound.current.stop();
+    } else {
       sound.current = new Howl({
         src: [soundFile],
         onend: () => {
