@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './MainLayout.style';
 import MainHeader from '../../components/main/MainHeader';
 import MainDescription from '../../components/main/MainDescription';
-import MainSeondDescription from '../../components/main/MainSecoudDescription';
+import MainSecondDescription from '../../components/main/MainSecondDescription';
 import MainThirdDescription from '../../components/main/MainThirdDescription';
 import MainFourthDescription from '../../components/main/MainFourthDescription';
 const MainLayout = () => {
@@ -11,7 +11,7 @@ const MainLayout = () => {
       <S.Container>
         <MainHeader></MainHeader>
         <MainDescription></MainDescription>
-        <MainSeondDescription></MainSeondDescription>
+        <MainSecondDescription></MainSecondDescription>
         <MainThirdDescription></MainThirdDescription>
         <MainFourthDescription></MainFourthDescription>
       </S.Container>
