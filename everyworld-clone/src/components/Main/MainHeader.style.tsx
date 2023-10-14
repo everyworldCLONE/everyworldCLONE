@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   color: white;
-  padding-left: 100px;
-  padding-right: 100px;
 `;
 
 export const MainHeader = styled.div`

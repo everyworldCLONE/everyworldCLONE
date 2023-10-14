@@ -1,5 +1,7 @@
 export const theme = {
-  color: {},
+  color: {
+    purple: '#C408FF',
+  },
 };
 
 export const font = {
