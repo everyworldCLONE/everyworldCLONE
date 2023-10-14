@@ -7,5 +7,5 @@ export const Container = styled.div`
 
 export const Section = styled.div`
   width: 100%;
-  margin-top: 2.5rem;
+  margin-top: 10rem;
 `;

@@ -31,11 +31,12 @@ export const Text = styled.div`
 // 구입창
 export const SectionRight = styled.div`
   width: 100%;
+  height: auto;
 `;
 
 export const MembershipCardPurchaseModal = styled.div`
   width: 80%;
-  height: 500px;
+
   border: 4px solid white;
   padding: 1rem 2.5rem 30px;
 `;

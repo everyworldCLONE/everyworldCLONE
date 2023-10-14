@@ -14,7 +14,7 @@ const PurchaseMembershipCard = () => {
   const [isModal, setIsModal] = useState<boolean>(false);
 
   //지갑연결하기 리코일
-  const [isConnected, setIsConnected] = useRecoilState<boolean>(WalletConnect);
+  // const [isConnected, setIsConnected] = useRecoilState<boolean>(WalletConnect);
 
   useEffect(() => {
     price();
