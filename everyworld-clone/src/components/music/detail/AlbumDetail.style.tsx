@@ -1,8 +1,20 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const slideUp = keyframes`
+  0% {
+    transform: translateY(3%); 
+    opacity: 0; 
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1; 
+  }
+`;
 
 export const Wrap = styled.div`
   min-height: 100vh;
   color: white;
+  animation: ${slideUp} 0.5s ease-in-out;
 `;
 
 export const Container = styled.div`

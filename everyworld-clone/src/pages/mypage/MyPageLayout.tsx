@@ -3,11 +3,15 @@ import * as S from './MyPageLayout.style';
 import InfoBox from '../../components/mypage/infobox/InfoBox';
 import ListCard from '../../components/mypage/list/ListCard';
 import WalletModal from '../../components/mypage/modal/WalletModal';
+import { useRecoilState } from 'recoil';
+import { WalletConnect } from '../../atoms/WalletConnectAtom';
 
 const MyPageLayout = () => {
+  const [isConnected, setIsConnected] = useRecoilState<boolean>(WalletConnect);
+
   return (
     <S.Wrap>
-      <WalletModal />
+      {!isConnected && <WalletModal setIsConnected={setIsConnected} />}
       <S.Container>
         <S.RightLogo>
           <div>
@@ -25,8 +29,10 @@ const MyPageLayout = () => {
               <button>MY NFT</button>
             </div>
           </S.ListHeader>
-          <S.NoNFT>보유한 NFT가 없습니다.</S.NoNFT>
-          <S.ListSection>{/* <ListCard /> */}</S.ListSection>
+          {/* <S.NoNFT>보유한 NFT가 없습니다.</S.NoNFT> */}
+          <S.ListSection>
+            <ListCard />
+          </S.ListSection>
         </S.ContentBox>
         <S.ListFooter>
           <div>

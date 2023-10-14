@@ -1,9 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Howl } from 'howler';
 import * as S from './AlbumDetail.style';
 import PlayBtn from '../../../assets/icons/play.svg';
 import StopBtn from '../../../assets/icons/stop.svg';
-import soundFile from '../../../assets/lost-stars.mp3';
 
 interface propsType {
   data: {
@@ -12,30 +11,53 @@ interface propsType {
     content: string;
     music: string;
   };
+  currentMusic: number;
+  setCurrentMusic: (arg0: number) => void;
 }
 
 const PlayList = (props: propsType) => {
-  const [isPlay, setIsPlay] = useState(false);
+  const [isPlay, setIsPlay] = useState<boolean>(false);
   const sound = useRef<Howl | null>(null);
 
-  const musicHandler = () => {
+  useEffect(() => {
     if (sound.current) {
-      sound.current.stop();
-    } else {
-      sound.current = new Howl({
-        src: [soundFile],
-        onend: () => {
-          setIsPlay(false);
-        },
-      });
+      return () => {
+        sound.current!.stop();
+        sound.current!.unload();
+        setIsPlay(false);
+      };
     }
+  }, [props.currentMusic]);
 
-    if (isPlay) {
-      sound.current.pause();
+  const playMusic = () => {
+    sound.current = new Howl({
+      src: [props.data.music],
+      onend: () => {
+        setIsPlay(false);
+      },
+    });
+    sound.current.play();
+    setIsPlay(true);
+    props.setCurrentMusic(props.data.id);
+  };
+
+  const musicHandler = () => {
+    if (!props.currentMusic) {
+      playMusic();
+    } else if (props.data.id !== props.currentMusic) {
+      sound.current?.stop();
+      sound.current?.unload();
+      setIsPlay(false);
+      playMusic();
     } else {
-      sound.current.play();
+      if (isPlay) {
+        sound.current?.pause();
+        setIsPlay(false);
+      } else {
+        sound.current?.play();
+        setIsPlay(true);
+      }
     }
-    setIsPlay(!isPlay);
   };
 
   return (
