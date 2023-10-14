@@ -1,5 +1,5 @@
 import React from 'react';
-import * as S from './MainHeader.style';
+import * as S from './MainHeader.stylee';
 
 const MainHeader = () => {
   return (
