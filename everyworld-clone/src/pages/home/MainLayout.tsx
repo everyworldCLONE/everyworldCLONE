@@ -1,9 +1,10 @@
 import React from 'react';
 import * as S from './MainLayout.style';
-import MainHeader from '../../components/Main/MainHeader';
-import MainDescription from '../../components/Main/MainDescription';
-import MainSeondDescription from '../../components/Main/MainSecoudDescription';
-import MainThirdDescription from '../../components/Main/MainThirdDescription';
+import MainHeader from '../../components/main/MainHeader';
+import MainDescription from '../../components/main/MainDescription';
+import MainSeondDescription from '../../components/main/MainSecoudDescription';
+import MainThirdDescription from '../../components/main/MainThirdDescription';
+import MainFourthDescription from '../../components/main/MainFourthDescription';
 const MainLayout = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const MainLayout = () => {
         <MainDescription></MainDescription>
         <MainSeondDescription></MainSeondDescription>
         <MainThirdDescription></MainThirdDescription>
+        <MainFourthDescription></MainFourthDescription>
       </S.Container>
     </>
   );
