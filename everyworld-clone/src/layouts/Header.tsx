@@ -17,8 +17,8 @@ const Header = () => {
           </S.StyleLink>
           <S.StyleLink to="/">HOME</S.StyleLink>
           <S.StyleLink to="/">MEMBERSHIP</S.StyleLink>
-          <S.StyleLink to="/">MUSIC</S.StyleLink>
-          <S.StyleLink to="/">MY PAGE</S.StyleLink>
+          <S.StyleLink to="/music">MUSIC</S.StyleLink>
+          <S.StyleLink to="/mypage">MY PAGE</S.StyleLink>
         </S.HeaderNav>
       </S.Container>
     </>
