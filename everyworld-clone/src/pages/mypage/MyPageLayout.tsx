@@ -25,10 +25,8 @@ const MyPageLayout = () => {
               <button>MY NFT</button>
             </div>
           </S.ListHeader>
-          {/* <S.NoNFT>보유한 NFT가 없습니다.</S.NoNFT> */}
-          <S.ListSection>
-            <ListCard />
-          </S.ListSection>
+          <S.NoNFT>보유한 NFT가 없습니다.</S.NoNFT>
+          <S.ListSection>{/* <ListCard /> */}</S.ListSection>
         </S.ContentBox>
         <S.ListFooter>
           <div>
