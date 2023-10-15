@@ -7,38 +7,17 @@ import { useRecoilState } from 'recoil';
 import { WalletConnect } from '../../atoms/WalletConnectAtom';
 import doubleYou from '../../assets/aron-solid.png';
 import tripleYou from '../../assets/jg-solid.png';
+import { WalletInfo } from '../../atoms/WalletAtom';
 
 interface wallet {
-  isHas: boolean;
-  address: string;
-  NFT: NFTItem[];
-}
-
-interface NFTItem {
-  id: number;
-  name: string;
-  img: string;
+  nftExist: boolean;
+  walletName: string;
+  nftList: [];
 }
 
 const MyPageLayout = () => {
-  const Mock = {
-    isHas: true,
-    address: '0xE682CE6404a94A60d9B52ACddbe8F559Cb2eADfd',
-    NFT: [
-      {
-        id: 1,
-        name: 'DoubleYou',
-        img: doubleYou,
-      },
-      {
-        id: 2,
-        name: 'TripleYou',
-        img: tripleYou,
-      },
-    ],
-  };
   const [isConnected, setIsConnected] = useRecoilState<boolean>(WalletConnect);
-  const [walletInfo, setWalletInfo] = useState<wallet>(Mock);
+  const [walletInfo, setWalletInfo] = useRecoilState<wallet>(WalletInfo);
 
   return (
     <S.Wrap>
@@ -55,15 +34,15 @@ const MyPageLayout = () => {
         </S.RightLogo>
         <S.ContentBox>
           <S.MySection>
-            <InfoBox address={walletInfo.address} />
+            <InfoBox address={walletInfo.walletName} setWalletInfo={setWalletInfo} />
           </S.MySection>
           <S.ListHeader />
-          {!walletInfo.isHas ? (
+          {!walletInfo.nftExist ? (
             <S.NoNFT>보유한 NFT가 없습니다.</S.NoNFT>
           ) : (
             <S.ListSection>
-              {walletInfo.NFT.map((NFT, index) => (
-                <ListCard NFT={NFT} key={index} />
+              {walletInfo.nftList.map((nft, index) => (
+                <ListCard NFT={nft} key={index} />
               ))}
             </S.ListSection>
           )}

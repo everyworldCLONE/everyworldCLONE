@@ -4,13 +4,22 @@ import profile from '../../../assets/icons/profile.svg';
 import { useRecoilState } from 'recoil';
 import { WalletConnect } from '../../../atoms/WalletConnectAtom';
 import { useNavigate } from 'react-router-dom';
+import { WalletInfo } from '../../../atoms/WalletAtom';
 
 interface propsType {
   address: string;
 }
 
+interface wallet {
+  nftExist: boolean;
+  walletName: string;
+  nftList: [];
+}
+
 const InfoBox = (props: propsType) => {
   const [isConnected, setIsConnected] = useRecoilState<boolean>(WalletConnect);
+  const [walletInfo, setWalletInfo] = useRecoilState<wallet>(WalletInfo);
+
   const nav = useNavigate();
 
   const formattingWalletAddress = (address: string) => {
@@ -24,6 +33,12 @@ const InfoBox = (props: propsType) => {
   const formattedAddress = formattingWalletAddress(props.address);
 
   const connectedHandler = () => {
+    setWalletInfo((prevItemList) => ({
+      ...prevItemList,
+      nftExist: false,
+      walletName: '',
+      nftList: [],
+    }));
     setIsConnected(false);
     nav('/');
   };
