@@ -23,7 +23,6 @@ const Header = () => {
   const languageSelectHandler = (e: React.MouseEvent<HTMLLIElement>) => {
     setLanguagesVisible(!languagesVisible);
 
-
     const selectedLanguage = (e.target as HTMLLIElement).textContent;
     if (selectedLanguage === 'English') {
       setLanguages('en');
@@ -40,7 +39,6 @@ const Header = () => {
   // };
 
   //언어 변경 요청하기
-
 
   return (
     <>

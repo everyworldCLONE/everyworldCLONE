@@ -60,6 +60,7 @@ export const LanguageList = styled.div`
   padding: 0.5rem;
   background-color: white;
   border-radius: 10px;
+  z-index: 999;
   ul {
     display: flex;
     flex-direction: column;
