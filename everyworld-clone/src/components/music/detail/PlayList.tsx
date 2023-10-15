@@ -23,6 +23,7 @@ const PlayList = (props: propsType) => {
         setIsPlay(false);
       };
     }
+    console.log(props.currentMusic);
   }, [props.currentMusic]);
 
   const playMusic = () => {
@@ -44,6 +45,7 @@ const PlayList = (props: propsType) => {
       sound.current?.stop();
       setIsPlay(false);
       playMusic();
+      setIsPlay(true);
     } else {
       if (isPlay) {
         sound.current?.pause();
