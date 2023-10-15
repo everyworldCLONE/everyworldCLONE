@@ -34,7 +34,7 @@ const AlbumDetail = () => {
 
   const getAlbumInfo = async () => {
     const res = await axios.get(
-      `http:///13.124.66.205:8080/api/v1/music/${albumId}?language=${language}`,
+      `https://codevelop.store/api/v1/music/${albumId}?language=${language}`,
     );
     setAlbumInfo(res.data.data);
     console.log(albumInfo);

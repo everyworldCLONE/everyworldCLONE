@@ -5,7 +5,7 @@ import * as S from '../../pages/music/MusicLayout.style';
 interface propsTypes {
   data: {
     id: number;
-    img: any;
+    img: string;
   };
 }
 
