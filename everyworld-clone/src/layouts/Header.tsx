@@ -4,9 +4,13 @@ import * as S from './Header.style';
 import LanguageSvg from '../assets/icons/language.svg';
 import { useLanguage } from '../hooks/useLanguage';
 
+import axios from 'axios';
+import { useRecoilState } from 'recoil';
+import { LanguagesState } from '../atoms/LanguagesAtom';
+
 const Header = () => {
   //현재 랭기지
-  const [languages, setLanguages] = useState('KR');
+  const [languages, setLanguages] = useRecoilState(LanguagesState);
 
   //랭기지창 보여주기 상태
   const [languagesVisible, setLanguagesVisible] = useState(false);
@@ -35,6 +39,8 @@ const Header = () => {
   // const languageHandler = (selectedLanguage: string) => {
   //   setLanguages(useLanguage(selectedLanguage));
   // };
+
+  //언어 변경 요청하기
 
   return (
     <>

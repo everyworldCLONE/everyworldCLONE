@@ -2,8 +2,17 @@ import React, { useState, useRef, useEffect } from 'react';
 import * as S from './PurchaseMembershipCard.style';
 import WalletModal from '../mypage/modal/WalletModal';
 import { useRecoilState } from 'recoil';
+import { Link } from 'react-router-dom';
 
-const PurchaseMembershipCard = () => {
+interface propsType {
+  data: {
+    img: string[];
+    title: string[];
+    content: string[];
+  };
+}
+
+const PurchaseMembershipCard = (props: propsType) => {
   //멤버쉽 수량
   const [quantity, setQuantity] = useState<number>(1);
   //토탈가격
@@ -67,16 +76,9 @@ const PurchaseMembershipCard = () => {
       <S.Container>
         <S.SectionLeft>
           <S.Text>
-            <p>DoubleU</p>
-            <p>
-              The first EveryWorld Digital Membership Card, crafted with boundless excitement and
-              enthusiasm, inspired by the four extraordinary members of W24!
-            </p>
-            <p>
-              Prepare to embark on a journey where 3,000 DoubleU hold not just treasures, but 3,000
-              dreams. Get ready to seize your piece of the dream and become a part of this thrilling
-              adventure!
-            </p>
+            <p>{props.data?.content[0]}</p>
+            <p>{props.data?.content[1]}</p>
+            <p>{props.data?.content[2]}</p>
           </S.Text>
         </S.SectionLeft>
         <S.SectionRight>
@@ -170,7 +172,9 @@ const PurchaseMembershipCard = () => {
                 </S.DivSpaceBetween>
               </div>
             </S.InnerTextDiv>
-            <S.PurchaseButton onClick={modalHandler}>Purchase</S.PurchaseButton>
+            <Link to="/mypage">
+              <S.PurchaseButton>Purchase</S.PurchaseButton>
+            </Link>
           </S.MembershipCardPurchaseModal>
         </S.SectionRight>
       </S.Container>

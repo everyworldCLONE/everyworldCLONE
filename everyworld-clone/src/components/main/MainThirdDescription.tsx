@@ -1,24 +1,29 @@
 import React from 'react';
 import * as S from './MainThirdDescription.style';
-const MainThirdDescription = () => {
+
+interface propsType {
+  data: {
+    img: string[];
+    title: string[];
+    content: string[];
+  };
+}
+
+const MainThirdDescription = (props: propsType) => {
   return (
     <>
       <S.Container>
         <div>
           <div>
             <S.Title>
-              <p>EVENT</p>
-              <p>CONCERT</p>
+              <p>{props.data?.title[0]}</p>
+              <p>{props.data?.title[1]}</p>
             </S.Title>
           </div>
           <S.Section>
-            <p>W24 has exciting plans to perform at numerous concerts.</p>
-            <p>
-              Membership holders with concert tickets have the opportunity to enter rehearsals
-              through a lottery and enjoy various benefits, including ticket discounts. Become a
-              holder and experience special perks at upcoming concerts without any additional costs.
-            </p>
-            <p>You can access the link to reserve concert tickets and find detailed information.</p>
+            <p>{props.data?.content[0]}</p>
+            <p>{props.data?.content[1]}</p>
+            <p>{props.data?.content[2]}</p>
             <S.MainThirdImageDiv>
               <img
                 src="https://www.everyworld.club/_next/image?url=https%3A%2F%2Fcms.everyworld.club%2Fmedia%2Fw24_schedule_updated.png&w=3840&q=75"
@@ -39,7 +44,7 @@ const MainThirdDescription = () => {
                 <S.BorderBottom>Peru</S.BorderBottom> / <S.BorderBottom>Guatemala</S.BorderBottom>
               </p>
             </div>
-            <S.RightImage src="https://www.everyworld.club/_next/image?url=https%3A%2F%2Fcms.everyworld.club%2Fmedia%2FBorn%20again%20tour.jpeg&w=3840&q=75"></S.RightImage>
+            <S.RightImage src={props.data?.img[0]}></S.RightImage>
           </S.Section>
         </div>
       </S.Container>

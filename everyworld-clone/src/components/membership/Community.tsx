@@ -1,17 +1,22 @@
 import React from 'react';
 import * as S from './Community.style';
 import { Link } from 'react-router-dom';
-const Community = () => {
+
+interface propsType {
+  data: {
+    img: string[];
+    title: string[];
+    content: string[];
+  };
+}
+
+const Community = (props: propsType) => {
   return (
     <div>
       <S.Container>
         <S.LeftDiv>
-          <p>Community</p>
-          <p>
-            Get ready for an incredible experience as W24 and EVERYs from around the world eagerly
-            await you on the EveryWorld Discord. Stay connected and be the first to know all the
-            latest news and event updates. Join us in this vibrant community and have a blast.
-          </p>
+          <p>{props.data?.content[0]}</p>
+          <p>{props.data?.content[1]}</p>
         </S.LeftDiv>
         <S.RightDiv>
           <S.DiscordImage>
