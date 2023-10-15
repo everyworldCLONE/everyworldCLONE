@@ -88,6 +88,14 @@ export const DetailWrap = styled.div`
     font-size: 16px;
     margin-top: 1rem;
   }
+  img {
+    object-fit: contain;
+    color: transparent;
+    display: block;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+  }
 `;
 
 export const MusicBox = styled.section`

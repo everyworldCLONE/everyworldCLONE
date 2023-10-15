@@ -1,38 +1,63 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import * as S from './AlbumDetail.style';
-import Img1 from '../../../assets/begin-again.png';
 import DetailList from './DetailList';
-import FooterImg from '../../../assets/footer-img.png';
-import FooterSvg from '../../../assets/icons/album-footer.svg';
+import { useParams } from 'react-router-dom';
+import AlbumCover from './AlbumCover';
+import DetailFooter from './DetailFooter';
+
+import axios from 'axios';
+import { useRecoilState } from 'recoil';
+import { LanguagesState } from '../../../atoms/LanguagesAtom';
+
+interface albumInfo {
+  img: string;
+  title: string[];
+  introduceCheck: boolean;
+  introduce: albumIntroduce;
+  musicList: {
+    id: number;
+    title: string;
+    content: string;
+    music: string;
+  };
+}
+interface albumIntroduce {
+  title: string;
+  content: string;
+  img: string;
+}
 
 const AlbumDetail = () => {
+  const [language] = useRecoilState<string>(LanguagesState);
+  const [albumInfo, setAlbumInfo] = useState<albumInfo>({});
+  const { albumId } = useParams();
+
+  const getAlbumInfo = async () => {
+    const res = await axios.get(
+      `http:///13.124.66.205:8080/api/v1/music/${albumId}?language=${language}`,
+    );
+    setAlbumInfo(res.data.data);
+    console.log(albumInfo);
+  };
+
+  useEffect(() => {
+    getAlbumInfo();
+  }, []);
+
   return (
     <S.Wrap>
       <div>
         <S.Container>
-          <S.AlbumCover>
-            <S.AlbumImg>
-              <img src={Img1} />
-            </S.AlbumImg>
-            <S.AlbumName>
-              <div>
-                <h2>
-                  <span>BEGIN</span>
-                  <span style={{ fontWeight: '700' }}>AGAIN</span>
-                </h2>
-              </div>
-            </S.AlbumName>
-          </S.AlbumCover>
+          <AlbumCover img={albumInfo.img} title={albumInfo.title} />
           <S.AlbumDetail>
-            <DetailList />
+            <DetailList
+              introCheck={albumInfo.introduceCheck}
+              albumDes={albumInfo.introduce}
+              music={albumInfo.musicList}
+            />
           </S.AlbumDetail>
         </S.Container>
-        <S.DetailFooter>
-          <S.DetailFooterImg>
-            <img src={FooterImg} />
-            <div />
-          </S.DetailFooterImg>
-        </S.DetailFooter>
+        <DetailFooter />
       </div>
     </S.Wrap>
   );
