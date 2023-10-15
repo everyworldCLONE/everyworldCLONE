@@ -42,7 +42,7 @@ const AlbumDetail = () => {
 
   useEffect(() => {
     getAlbumInfo();
-  }, []);
+  }, [language]);
 
   return (
     <S.Wrap>
