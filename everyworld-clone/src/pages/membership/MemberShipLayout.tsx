@@ -16,8 +16,8 @@ const MemberShipLayout = () => {
   //현재 랭기지
   const [languages, setLanguages] = useRecoilState<string>(LanguagesState);
 
-  const url = 'http:///13.124.66.205:8080/api/v1/membership/content';
-  const benefitsurl = 'http:///13.124.66.205:8080/api/v1/membership/benefit';
+  const url = 'https://codevelop.store/api/v1/membership/content';
+  const benefitsurl = 'https://codevelop.store/api/v1/membership/benefit';
   const params = {
     //여기에다가 recoli 가져오면됨
     language: languages,
