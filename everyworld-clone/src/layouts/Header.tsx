@@ -9,11 +9,6 @@ const Header = () => {
   //랭기지창 보여주기 상태
   const [languagesVisible, setLanguagesVisible] = useState(false);
 
-  //선택한 언어
-  const selectLanguage1 = useRef(null);
-  const selectLanguage2 = useRef(null);
-  const selectLanguage3 = useRef(null);
-
   //랭기지창 토글 버튼
   const toggleLanguages = () => {
     setLanguagesVisible(!languagesVisible);
