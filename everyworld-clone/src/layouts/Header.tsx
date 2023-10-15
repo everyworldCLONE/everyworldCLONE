@@ -2,10 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import * as S from './Header.style';
 import LanguageSvg from '../assets/icons/language.svg';
+import { useLanguage } from '../hooks/useLanguage';
 
 const Header = () => {
   //현재 랭기지
   const [languages, setLanguages] = useState('KR');
+
   //랭기지창 보여주기 상태
   const [languagesVisible, setLanguagesVisible] = useState(false);
 
@@ -18,6 +20,13 @@ const Header = () => {
     setLanguagesVisible(!languagesVisible);
     console.log(e.target.textContent);
   };
+
+
+
+  // 언어 바꾸는 함수 => 커스텀 훅으로 빼놨습니다 -지우
+  // const languageHandler = (selectedLanguage: string) => {
+  //   setLanguages(useLanguage(selectedLanguage));
+  // };
 
   return (
     <>
