@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as S from './Header.style';
 import LanguageSvg from '../assets/icons/language.svg';
@@ -16,14 +16,22 @@ const Header = () => {
     setLanguagesVisible(!languagesVisible);
   };
 
-  const languageSelectHandler = (e: React.MouseEventHandler<HTMLLIElement>) => {
+  const languageSelectHandler = (e: React.MouseEvent<HTMLLIElement>) => {
     setLanguagesVisible(!languagesVisible);
-    console.log(e.target.textContent);
+
+    const selectedLanguage = (e.target as HTMLLIElement).textContent;
+    if (selectedLanguage === 'English') {
+      setLanguages('en');
+    } else if (selectedLanguage === '한국어') {
+      setLanguages('kr');
+    } else if (selectedLanguage === 'Español') {
+      setLanguages('es');
+    }
   };
 
+  console.log(languages);
 
-
-  // 언어 바꾸는 함수 => 커스텀 훅으로 빼놨습니다 -지우
+  // // 언어 바꾸는 함수 => 커스텀 훅으로 빼놨습니다 -지우
   // const languageHandler = (selectedLanguage: string) => {
   //   setLanguages(useLanguage(selectedLanguage));
   // };
@@ -39,20 +47,14 @@ const Header = () => {
           <div>
             <S.LanguageButtonDiv onClick={toggleLanguages} onBlur={toggleLanguages}>
               <img src={LanguageSvg} alt="" />
-              <span>{languages}</span>
+              <span>{languages.toUpperCase()}</span>
             </S.LanguageButtonDiv>
             {languagesVisible && (
               <S.LanguageList>
                 <ul>
-                  <li ref={selectLanguage1} onClick={languageSelectHandler}>
-                    English
-                  </li>
-                  <li ref={selectLanguage2} onClick={languageSelectHandler}>
-                    한국어
-                  </li>
-                  <li ref={selectLanguage3} onClick={languageSelectHandler}>
-                    Español
-                  </li>
+                  <li onClick={languageSelectHandler}>English</li>
+                  <li onClick={languageSelectHandler}>한국어</li>
+                  <li onClick={languageSelectHandler}>Español</li>
                 </ul>
               </S.LanguageList>
             )}
