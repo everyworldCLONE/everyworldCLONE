@@ -1,21 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import * as S from './MusicLayout.style';
-import { Link } from 'react-router-dom';
-import Img1 from '../../assets/begin-again.png';
-import Img2 from '../../assets/sing-street.png';
 import AlbumCard from '../../components/music/AlbumCard';
+import axios from 'axios';
+import { useRecoilState } from 'recoil';
+import { LanguagesState } from '../../atoms/LanguagesAtom';
+
+type albumList = albumItem[];
+interface albumItem {
+  id: number;
+  img: string;
+}
 
 const MusicLayout = () => {
-  const albumIdList = [
-    {
-      id: 1,
-      img: Img1,
-    },
-    {
-      id: 2,
-      img: Img2,
-    },
-  ];
+  const [albumIdList, setAlbumIdList] = useState<albumList>([]);
+  const [language] = useRecoilState<string>(LanguagesState);
+
+  const getAlbumList = async () => {
+    const res = await axios.get(`http:///13.124.66.205:8080/api/v1/music?language=${language}`, {});
+    setAlbumIdList(res.data.data);
+  };
+
+  useEffect(() => {
+    getAlbumList();
+  }, []);
+
   return (
     <S.Wrap>
       <S.Wrapper>
