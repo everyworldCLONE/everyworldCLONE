@@ -32,7 +32,7 @@ const WalletModal = (props: propsType) => {
   };
 
   const connectHandler = async () => {
-    const res = await axios.post('http:///13.124.66.205:8080/api/v1/wallet', {
+    const res = await axios.post('https://codevelop.store/api/v1/wallet', {
       walletName: SHA256(walletId).toString(),
     });
     props.setWalletInfo(res.data.data);
