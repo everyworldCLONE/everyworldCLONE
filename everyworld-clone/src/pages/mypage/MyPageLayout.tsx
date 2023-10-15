@@ -5,8 +5,6 @@ import ListCard from '../../components/mypage/list/ListCard';
 import WalletModal from '../../components/mypage/modal/WalletModal';
 import { useRecoilState } from 'recoil';
 import { WalletConnect } from '../../atoms/WalletConnectAtom';
-import doubleYou from '../../assets/aron-solid.png';
-import tripleYou from '../../assets/jg-solid.png';
 import { WalletInfo } from '../../atoms/WalletAtom';
 
 interface wallet {
