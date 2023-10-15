@@ -75,7 +75,7 @@ export const ListSection = styled.section`
   max-width: 1480px;
   margin-left: auto;
   margin-right: auto;
-  gap: 1.5rem;
+  gap: 5rem;
   display: grid;
   margin-top: 1.5rem;
   z-index: 1;

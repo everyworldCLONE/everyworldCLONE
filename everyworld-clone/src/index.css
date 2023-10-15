@@ -13,7 +13,7 @@ a {
   color: inherit;
 }
 
-.bg-img {
+.bg-wrap {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -25,4 +25,9 @@ a {
   height: 311px;
   max-height: 1200px;
   top: -6rem;
+}
+.bg-img {
+  width: 100%;
+  height: 100vh;
+  opacity: 0.3;
 }

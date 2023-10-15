@@ -5,20 +5,23 @@ import { useRecoilState } from 'recoil';
 import { WalletConnect } from '../../../atoms/WalletConnectAtom';
 import { useNavigate } from 'react-router-dom';
 
-const InfoBox = () => {
+interface propsType {
+  address: string;
+}
+
+const InfoBox = (props: propsType) => {
   const [isConnected, setIsConnected] = useRecoilState<boolean>(WalletConnect);
   const nav = useNavigate();
-  const walletAddress = '0xE682CE6404a94A60d9B52ACddbe8F559Cb2eADfd';
 
   const formattingWalletAddress = (address: string) => {
-    if (address.length > 10) {
+    if (address?.length > 10) {
       const start = address.slice(0, 5);
       const end = address.slice(-5);
       return start + '...' + end;
     }
     return address;
   };
-  const formattedAddress = formattingWalletAddress(walletAddress);
+  const formattedAddress = formattingWalletAddress(props.address);
 
   const connectedHandler = () => {
     setIsConnected(false);
@@ -44,7 +47,7 @@ const InfoBox = () => {
           <S.BtnWrap>
             <button
               onClick={() => {
-                copyClipBoardHandler(walletAddress);
+                copyClipBoardHandler(props.address);
               }}
             >
               지갑주소 복사
