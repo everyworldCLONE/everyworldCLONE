@@ -1,13 +1,20 @@
 import React from 'react';
 import * as S from './ListCard.style';
-import doubleUp from '../../../assets/aron-solid.png';
 
-const ListCard = () => {
+interface propsType {
+  NFT: {
+    id: number;
+    name: string;
+    img: string;
+  };
+}
+
+const ListCard = (props: propsType) => {
   return (
     <S.CardWrap>
-      <S.CardImg src={doubleUp} />
+      <S.CardImg src={props.NFT.img} />
       <S.CardTitle>
-        <h1>Double UP</h1>
+        <h1>{props.NFT.name}</h1>
       </S.CardTitle>
     </S.CardWrap>
   );

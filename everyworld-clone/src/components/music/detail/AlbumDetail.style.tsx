@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { slideUp } from '../../../globalLayout/GlobalStyle';
 
 export const Wrap = styled.div`
   min-height: 100vh;
   color: white;
+  animation: ${slideUp} 0.5s ease-in-out;
 `;
 
 export const Container = styled.div`

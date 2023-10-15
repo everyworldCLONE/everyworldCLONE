@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CardWrap = styled.div`
-  width: 195px;
+  width: 365px;
   overflow: hidden;
   border: 1px solid white;
   border-radius: 0.25rem;
@@ -9,7 +9,7 @@ export const CardWrap = styled.div`
 
 export const CardImg = styled.img`
   width: 100%;
-  height: 195px;
+  height: 365px;
   object-fit: cover;
 `;
 

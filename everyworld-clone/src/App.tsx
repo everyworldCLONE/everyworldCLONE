@@ -9,6 +9,7 @@ import AlbumDetail from './components/music/detail/AlbumDetail';
 import MyPageLayout from './pages/mypage/MyPageLayout';
 import MemberShipLayout from './pages/membership/MemberShipLayout';
 import Footer from './layouts/footer/Footer';
+import BgImg from './assets/bgimg.png';
 
 function App() {
   const router = createBrowserRouter([
@@ -49,9 +50,9 @@ const Root = () => {
     <>
       <RecoilRoot>
         <main>
-          <div className="bg-img">
+          <div className="bg-wrap">
             <div className="img-container">
-              <img></img>
+              <img className="bg-img" src={BgImg}></img>
             </div>
           </div>
           <div style={{ position: 'relative', zIndex: '30' }}>
