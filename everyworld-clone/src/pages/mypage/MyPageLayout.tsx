@@ -6,6 +6,7 @@ import WalletModal from '../../components/mypage/modal/WalletModal';
 import { useRecoilState } from 'recoil';
 import { WalletConnect } from '../../atoms/WalletConnectAtom';
 import { WalletInfo } from '../../atoms/WalletAtom';
+import ListHeader from '../../components/mypage/modal/ListHeader';
 
 interface wallet {
   nftExist: boolean;
@@ -34,7 +35,7 @@ const MyPageLayout = () => {
           <S.MySection>
             <InfoBox address={walletInfo.walletName} setWalletInfo={setWalletInfo} />
           </S.MySection>
-          <S.ListHeader />
+          <ListHeader />
           {!walletInfo.nftExist ? (
             <S.NoNFT>보유한 NFT가 없습니다.</S.NoNFT>
           ) : (
