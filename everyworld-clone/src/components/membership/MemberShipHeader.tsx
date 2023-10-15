@@ -1,22 +1,28 @@
 import React from 'react';
 import * as S from './MemberShipHeader.style';
-const MemberShipHeader = () => {
+
+interface propsType {
+  data: {
+    img: string[];
+    title: string[];
+    content: string[];
+  };
+}
+
+const MemberShipHeader = (props: propsType) => {
   return (
     <>
       <S.Container>
         <S.PositionRelative>
           <S.TitleText>
-            <p>OWN</p>
-            <p>YOUR</p>
-            <p>DOUBLEU</p>
+            <p>{props.data?.title[0]}</p>
+            <p>{props.data?.title[1]}</p>
+            <p>{props.data?.title[2]}</p>
           </S.TitleText>
         </S.PositionRelative>
 
         <S.ImageDiv>
-          <S.Image
-            src="https://www.everyworld.club/_next/image?url=https%3A%2F%2Fcms.everyworld.club%2Fmedia%2Fnft-drop-minting.jpg&w=3840&q=75"
-            alt=""
-          />
+          <S.Image src={props.data?.img[0]} alt="" />
         </S.ImageDiv>
       </S.Container>
     </>

@@ -1,12 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as S from './Header.style';
 import LanguageSvg from '../assets/icons/language.svg';
 import { useLanguage } from '../hooks/useLanguage';
 
+import axios from 'axios';
+import { useRecoilState } from 'recoil';
+import { LanguagesState } from '../atoms/LanguagesAtom';
+
 const Header = () => {
   //현재 랭기지
-  const [languages, setLanguages] = useState('KR');
+  const [languages, setLanguages] = useRecoilState(LanguagesState);
 
   //랭기지창 보여주기 상태
   const [languagesVisible, setLanguagesVisible] = useState(false);
@@ -16,16 +20,28 @@ const Header = () => {
     setLanguagesVisible(!languagesVisible);
   };
 
-  const languageSelectHandler = (e: React.MouseEventHandler<HTMLLIElement>) => {
+  const languageSelectHandler = (e: React.MouseEvent<HTMLLIElement>) => {
     setLanguagesVisible(!languagesVisible);
-    console.log(e.target.textContent);
+
+
+    const selectedLanguage = (e.target as HTMLLIElement).textContent;
+    if (selectedLanguage === 'English') {
+      setLanguages('en');
+    } else if (selectedLanguage === '한국어') {
+      setLanguages('kr');
+    } else if (selectedLanguage === 'Español') {
+      setLanguages('es');
+    }
   };
 
-  // 언어 바꾸는 함수 => 커스텀 훅으로 빼놨습니다 -지우
+  // // 언어 바꾸는 함수 => 커스텀 훅으로 빼놨습니다 -지우
   // const languageHandler = (selectedLanguage: string) => {
   //   setLanguages(useLanguage(selectedLanguage));
   // };
-  
+
+  //언어 변경 요청하기
+
+
   return (
     <>
       <S.Container>
@@ -37,20 +53,14 @@ const Header = () => {
           <div>
             <S.LanguageButtonDiv onClick={toggleLanguages} onBlur={toggleLanguages}>
               <img src={LanguageSvg} alt="" />
-              <span>{languages}</span>
+              <span>{languages.toUpperCase()}</span>
             </S.LanguageButtonDiv>
             {languagesVisible && (
               <S.LanguageList>
                 <ul>
-                  <li ref={selectLanguage1} onClick={languageSelectHandler}>
-                    English
-                  </li>
-                  <li ref={selectLanguage2} onClick={languageSelectHandler}>
-                    한국어
-                  </li>
-                  <li ref={selectLanguage3} onClick={languageSelectHandler}>
-                    Español
-                  </li>
+                  <li onClick={languageSelectHandler}>English</li>
+                  <li onClick={languageSelectHandler}>한국어</li>
+                  <li onClick={languageSelectHandler}>Español</li>
                 </ul>
               </S.LanguageList>
             )}

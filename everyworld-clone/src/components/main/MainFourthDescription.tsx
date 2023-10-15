@@ -1,28 +1,30 @@
 import React from 'react';
 import * as S from './MainFourthDescription.style';
 import ArrowCircleRight from '../../assets/icons/arrow_circle_right.svg';
-const MainFourthDescription = () => {
+
+interface propsType {
+  data: {
+    img: string[];
+    title: string[];
+    content: string[];
+  };
+}
+
+const MainFourthDescription = (props: propsType) => {
   return (
     <>
       <S.Container>
         <S.LeftDiv>
-          <img
-            src="https://www.everyworld.club/_next/image?url=https%3A%2F%2Fcms.everyworld.club%2Fmedia%2Fw24-_iPhone_X.png&w=3840&q=75"
-            alt=""
-          />
+          <img src={props.data?.img[0]} alt="" />
         </S.LeftDiv>
         <S.RightDiv>
           <S.Text>
-            <p>W24</p>
-            <p>IN MY</p>
-            <p>POCKET</p>
+            <p>{props.data?.title[0]} </p>
+            <p>{props.data?.title[1]}</p>
+            <p>{props.data?.title[2]}</p>
           </S.Text>
           <S.Paragraph>
-            <p>
-              Come join the EveryWorld Discord and have a great time! Interact with EVERYs from all
-              around the world, listen to music together, and even have unexpected conversations
-              with W24.
-            </p>
+            <p>{props.data?.content[0]}</p>
           </S.Paragraph>
           <S.ArrowButton>
             <img src={ArrowCircleRight} alt="" />

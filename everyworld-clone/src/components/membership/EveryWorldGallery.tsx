@@ -1,28 +1,33 @@
 import React from 'react';
 import * as S from './EveryWorldGallery.style';
+interface propsType {
+  data: {
+    img: string[];
+    title: string[];
+    content: string[];
+  };
+}
 
-const img =
-  'https://www.everyworld.club/_next/image?url=https%3A%2F%2Fcms.everyworld.club%2Fmedia%2Fhw-solid.png&w=3840&q=75';
-const EveryWorldGallery = () => {
+const EveryWorldGallery = (props: propsType) => {
   return (
     <>
       <S.Container>
         <S.TextDiv>
-          <p>EVERYWORLD</p>
-          <p>GALLERY</p>
+          <p>{props.data?.title[0]}</p>
+          <p>{props.data?.title[1]}</p>
         </S.TextDiv>
         <S.DivGrid>
           <S.GalleryImage>
-            <img src={img} />
+            <img src={props.data?.img[0]} />
           </S.GalleryImage>
           <S.GalleryImage>
-            <img src={img} />
+            <img src={props.data?.img[1]} />
           </S.GalleryImage>
           <S.GalleryImage>
-            <img src={img} />
+            <img src={props.data?.img[2]} />
           </S.GalleryImage>
           <S.GalleryImage>
-            <img src={img} />
+            <img src={props.data?.img[3]} />
           </S.GalleryImage>
         </S.DivGrid>
       </S.Container>
