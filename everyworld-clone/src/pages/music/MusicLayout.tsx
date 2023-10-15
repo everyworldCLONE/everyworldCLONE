@@ -16,7 +16,7 @@ const MusicLayout = () => {
   const [language] = useRecoilState<string>(LanguagesState);
 
   const getAlbumList = async () => {
-    const res = await axios.get(`http:///13.124.66.205:8080/api/v1/music?language=${language}`, {});
+    const res = await axios.get(`https://codevelop.store/api/v1/music?language=${language}`, {});
     setAlbumIdList(res.data.data);
   };
 

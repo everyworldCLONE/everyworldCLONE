@@ -21,13 +21,11 @@ const Header = () => {
     console.log(e.target.textContent);
   };
 
-
-
   // 언어 바꾸는 함수 => 커스텀 훅으로 빼놨습니다 -지우
   // const languageHandler = (selectedLanguage: string) => {
   //   setLanguages(useLanguage(selectedLanguage));
   // };
-
+  
   return (
     <>
       <S.Container>

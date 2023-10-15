@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 import { SetterOrUpdater } from 'recoil';
 import axios from 'axios';
 import InfoMsg from './InfoMsg';
+import { SHA256 } from 'crypto-js';
 
 interface propsType {
   setIsConnected: SetterOrUpdater<boolean>;
-  setWalletInfo: React.Dispatch<SetStateAction<wallet>>;
+  setWalletInfo: SetterOrUpdater<wallet>;
 }
 
 interface wallet {
@@ -31,8 +32,8 @@ const WalletModal = (props: propsType) => {
   };
 
   const connectHandler = async () => {
-    const res = await axios.post('http:///13.124.66.205:8080/', {
-      walletId: walletId,
+    const res = await axios.post('https://codevelop.store/api/v1/wallet', {
+      walletName: SHA256(walletId).toString(),
     });
     props.setWalletInfo(res.data.data);
     props.setIsConnected(true);
@@ -56,7 +57,7 @@ const WalletModal = (props: propsType) => {
               type="text"
               placeholder="내 지갑 이름"
               value={walletId}
-              onChange={() => onChangHandler}
+              onChange={onChangHandler}
             />
             <button onClick={connectHandler}>내 지갑 연결하기</button>
           </S.InputBox>
