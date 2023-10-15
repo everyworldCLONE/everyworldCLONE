@@ -22,7 +22,6 @@ export const Logo = styled.img`
 export const HeaderNav = styled.div`
   display: flex;
   align-items: center;
-  color: inherit;
 `;
 
 export const HeaderNavItems = styled.div`
@@ -33,6 +32,48 @@ export const HeaderNavItems = styled.div`
     border-bottom: 2px solid white;
     font-weight: bold;
     transition: 0.1s;
+  }
+`;
+
+export const RelativeDiv = styled.div`
+  position: relative;
+  display: flex;
+`;
+
+export const LanguageButtonDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    border-bottom: 2px solid white;
+    transition: 0.1s;
+  }
+  span {
+    margin-left: 1rem;
+  }
+`;
+
+export const LanguageList = styled.div`
+  position: absolute;
+  margin-top: 20px;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 10px;
+  ul {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.7rem;
+  }
+  ul li {
+    font-size: 1.1rem;
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
   }
 `;
 
