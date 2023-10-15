@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { slideUp } from '../../globalLayout/GlobalStyle';
 
 export const Container = styled.div`
   margin-top: 80px;
   color: white;
+  animation: ${slideUp} 0.5s ease-in-out;
 `;
 
 export const MainHeaderText = styled.div`
